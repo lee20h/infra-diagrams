@@ -9,7 +9,7 @@ with (Diagram("K8s", filename="img/k8s", show=False)):
         with Cluster("Network"):
             ingressGateway = k8s_network.Ingress("Ingress Gateway")
             service = k8s_network.SVC("Service")
-            istio >> ingressGateway >> service
+            ingressGateway >> service
         with Cluster("Compute"):
             deployment = k8s_compute.Deployment("Deployment")
             hpa = k8s_clusterconfig.HPA("HPA")

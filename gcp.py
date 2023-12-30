@@ -12,8 +12,8 @@ with Diagram("GCP", filename="img/gcp", show=False):
     with Cluster("VPC"):
         vpc = network.VPC("VPC")
         with Cluster("Workloads"):
-            gke = compute.GKE("Google Kubernetes Engine Cluster")
-            gce = compute.GCE("Google Compute Engine Instance")
+            gke = compute.GKE("GKE")
+            gce = compute.GCE("Compute Engine")
         db = database.SQL("Postgres DB")
         lb >> vpc
         vpc >> gke >> gce >> db
